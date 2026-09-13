@@ -1,0 +1,920 @@
+{
+  "run_id": "fixed-v01-1789343099999",
+  "end_request_ms": 1789343099999,
+  "bars_per_symbol": 35040,
+  "test_fraction": 0.3,
+  "source": "Bybit linear USDT 15m",
+  "costs": {
+    "fee_bps_per_side": 6,
+    "slippage_bps_per_side": 3,
+    "funding_stress_bps_per_8h": 1
+  },
+  "results": {
+    "ETHUSDT": {
+      "data_start": "2025-09-14 00:00:00+00:00",
+      "data_end": "2026-09-13 23:45:00+00:00",
+      "test_start": "2026-05-27 12:00:00+00:00",
+      "data_sha256": "a132903aa49d1807332b47e0892b0c02d98dbae1c80469348cb9c94b557c9b40",
+      "policies": {
+        "grouped": {
+          "trades": 326,
+          "win_rate": 0.3006134969325153,
+          "mean_net_return": -0.0015421227106466831,
+          "mean_net_r": -0.2616431752155052,
+          "sum_net_r": -85.29567512025469,
+          "profit_factor": 0.7283669696466367,
+          "max_drawdown_r": 98.84097669473822,
+          "long_trades": 185,
+          "short_trades": 141,
+          "exit_counts": {
+            "stop": 197,
+            "time": 80,
+            "target": 49
+          },
+          "months": {
+            "2026-05": {
+              "trades": 11,
+              "win_rate": 0.36363636363636365,
+              "mean_net_return": 0.00012713220997112828,
+              "mean_net_r": -0.08523828266512,
+              "sum_net_r": -0.9376211093163199,
+              "profit_factor": 1.0288858966695884,
+              "max_drawdown_r": 5.877309336105658,
+              "long_trades": 0,
+              "short_trades": 11,
+              "exit_counts": {
+                "stop": 6,
+                "time": 3,
+                "target": 2
+              }
+            },
+            "2026-06": {
+              "trades": 91,
+              "win_rate": 0.31868131868131866,
+              "mean_net_return": -0.0007767180491342603,
+              "mean_net_r": -0.07422572938878719,
+              "sum_net_r": -6.7545413743796345,
+              "profit_factor": 0.8870439136852377,
+              "max_drawdown_r": 21.237464058179494,
+              "long_trades": 30,
+              "short_trades": 61,
+              "exit_counts": {
+                "stop": 51,
+                "time": 23,
+                "target": 17
+              }
+            },
+            "2026-07": {
+              "trades": 97,
+              "win_rate": 0.32989690721649484,
+              "mean_net_return": -0.0017567052796084559,
+              "mean_net_r": -0.18537604429431473,
+              "sum_net_r": -17.98147629654853,
+              "profit_factor": 0.6495962899142366,
+              "max_drawdown_r": 26.680171121810364,
+              "long_trades": 73,
+              "short_trades": 24,
+              "exit_counts": {
+                "stop": 54,
+                "time": 29,
+                "target": 14
+              }
+            },
+            "2026-08": {
+              "trades": 93,
+              "win_rate": 0.26881720430107525,
+              "mean_net_return": -0.001205090711596388,
+              "mean_net_r": -0.40949351721389565,
+              "sum_net_r": -38.082897100892296,
+              "profit_factor": 0.7670972536569642,
+              "max_drawdown_r": 46.10067811182477,
+              "long_trades": 63,
+              "short_trades": 30,
+              "exit_counts": {
+                "stop": 61,
+                "time": 19,
+                "target": 13
+              }
+            },
+            "2026-09": {
+              "trades": 34,
+              "win_rate": 0.23529411764705882,
+              "mean_net_return": -0.004440449035552916,
+              "mean_net_r": -0.6335040952681738,
+              "sum_net_r": -21.539139239117908,
+              "profit_factor": 0.2780498473564004,
+              "max_drawdown_r": 21.539139239117908,
+              "long_trades": 19,
+              "short_trades": 15,
+              "exit_counts": {
+                "stop": 25,
+                "time": 6,
+                "target": 3
+              }
+            }
+          }
+        },
+        "naive": {
+          "trades": 339,
+          "win_rate": 0.2831858407079646,
+          "mean_net_return": -0.0016777700574114702,
+          "mean_net_r": -0.29129477178189,
+          "sum_net_r": -98.7489276340607,
+          "profit_factor": 0.7048785485555076,
+          "max_drawdown_r": 110.27039057129504,
+          "long_trades": 191,
+          "short_trades": 148,
+          "exit_counts": {
+            "stop": 206,
+            "time": 84,
+            "target": 49
+          },
+          "months": {
+            "2026-05": {
+              "trades": 10,
+              "win_rate": 0.3,
+              "mean_net_return": -0.0009119134783278519,
+              "mean_net_r": -0.37569664582865003,
+              "sum_net_r": -3.7569664582865006,
+              "profit_factor": 0.8033833426448868,
+              "max_drawdown_r": 8.696654685075838,
+              "long_trades": 1,
+              "short_trades": 9,
+              "exit_counts": {
+                "stop": 6,
+                "time": 3,
+                "target": 1
+              }
+            },
+            "2026-06": {
+              "trades": 97,
+              "win_rate": 0.30927835051546393,
+              "mean_net_return": -0.0008504804690149552,
+              "mean_net_r": -0.09544424512325275,
+              "sum_net_r": -9.258091776955517,
+              "profit_factor": 0.8749988902476457,
+              "max_drawdown_r": 24.53652117247639,
+              "long_trades": 33,
+              "short_trades": 64,
+              "exit_counts": {
+                "stop": 55,
+                "time": 24,
+                "target": 18
+              }
+            },
+            "2026-07": {
+              "trades": 99,
+              "win_rate": 0.32323232323232326,
+              "mean_net_return": -0.0017456578311768956,
+              "mean_net_r": -0.1831213997540162,
+              "sum_net_r": -18.129018575647603,
+              "profit_factor": 0.6535838420687835,
+              "max_drawdown_r": 25.660386282539037,
+              "long_trades": 72,
+              "short_trades": 27,
+              "exit_counts": {
+                "stop": 55,
+                "time": 30,
+                "target": 14
+              }
+            },
+            "2026-08": {
+              "trades": 96,
+              "win_rate": 0.2604166666666667,
+              "mean_net_return": -0.0013328308337928081,
+              "mean_net_r": -0.4385497278286204,
+              "sum_net_r": -42.10077387154756,
+              "profit_factor": 0.7399928978696712,
+              "max_drawdown_r": 46.87906000541641,
+              "long_trades": 64,
+              "short_trades": 32,
+              "exit_counts": {
+                "stop": 63,
+                "time": 20,
+                "target": 13
+              }
+            },
+            "2026-09": {
+              "trades": 37,
+              "win_rate": 0.16216216216216217,
+              "mean_net_return": -0.004766930374436131,
+              "mean_net_r": -0.6892993770709058,
+              "sum_net_r": -25.504076951623517,
+              "profit_factor": 0.2327597780423761,
+              "max_drawdown_r": 25.504076951623514,
+              "long_trades": 21,
+              "short_trades": 16,
+              "exit_counts": {
+                "stop": 27,
+                "time": 7,
+                "target": 3
+              }
+            }
+          }
+        },
+        "baseline": {
+          "trades": 620,
+          "win_rate": 0.3096774193548387,
+          "mean_net_return": -0.0015961591419465346,
+          "mean_net_r": -0.3143205331584044,
+          "sum_net_r": -194.87873055821075,
+          "profit_factor": 0.6954557351274756,
+          "max_drawdown_r": 211.54972453472837,
+          "long_trades": 334,
+          "short_trades": 286,
+          "exit_counts": {
+            "stop": 374,
+            "time": 170,
+            "target": 76
+          },
+          "months": {
+            "2026-05": {
+              "trades": 26,
+              "win_rate": 0.34615384615384615,
+              "mean_net_return": -0.0005272830811554175,
+              "mean_net_r": -0.19701801953543788,
+              "sum_net_r": -5.1224685079213845,
+              "profit_factor": 0.8689292034530521,
+              "max_drawdown_r": 12.645465883409608,
+              "long_trades": 0,
+              "short_trades": 26,
+              "exit_counts": {
+                "stop": 15,
+                "time": 7,
+                "target": 4
+              }
+            },
+            "2026-06": {
+              "trades": 165,
+              "win_rate": 0.3696969696969697,
+              "mean_net_return": -0.0002826511038519697,
+              "mean_net_r": -0.09965182166057321,
+              "sum_net_r": -16.44255057399458,
+              "profit_factor": 0.9502104697301073,
+              "max_drawdown_r": 33.39585722561404,
+              "long_trades": 65,
+              "short_trades": 100,
+              "exit_counts": {
+                "stop": 90,
+                "time": 50,
+                "target": 25
+              }
+            },
+            "2026-07": {
+              "trades": 173,
+              "win_rate": 0.30057803468208094,
+              "mean_net_return": -0.002198791715286264,
+              "mean_net_r": -0.32192379593960363,
+              "sum_net_r": -55.69281669755143,
+              "profit_factor": 0.5924290340226454,
+              "max_drawdown_r": 57.50368674669367,
+              "long_trades": 118,
+              "short_trades": 55,
+              "exit_counts": {
+                "stop": 107,
+                "time": 46,
+                "target": 20
+              }
+            },
+            "2026-08": {
+              "trades": 180,
+              "win_rate": 0.28888888888888886,
+              "mean_net_return": -0.0017596037367287394,
+              "mean_net_r": -0.4373437873435757,
+              "sum_net_r": -78.72188172184363,
+              "profit_factor": 0.6322611791431634,
+              "max_drawdown_r": 79.6540932978353,
+              "long_trades": 111,
+              "short_trades": 69,
+              "exit_counts": {
+                "stop": 112,
+                "time": 48,
+                "target": 20
+              }
+            },
+            "2026-09": {
+              "trades": 76,
+              "win_rate": 0.23684210526315788,
+              "mean_net_return": -0.0030546346895465653,
+              "mean_net_r": -0.5118291191697331,
+              "sum_net_r": -38.89901305689971,
+              "profit_factor": 0.43873192769005737,
+              "max_drawdown_r": 43.73916888971921,
+              "long_trades": 40,
+              "short_trades": 36,
+              "exit_counts": {
+                "stop": 50,
+                "time": 19,
+                "target": 7
+              }
+            }
+          }
+        }
+      }
+    },
+    "BTCUSDT": {
+      "data_start": "2025-09-14 00:00:00+00:00",
+      "data_end": "2026-09-13 23:45:00+00:00",
+      "test_start": "2026-05-27 12:00:00+00:00",
+      "data_sha256": "190789d80256ea92519eab27e577fe81a3ecc02e2809dd4b644ae6d87ec84dd9",
+      "policies": {
+        "grouped": {
+          "trades": 333,
+          "win_rate": 0.3033033033033033,
+          "mean_net_return": -0.001633144495579615,
+          "mean_net_r": -0.3508429762085743,
+          "sum_net_r": -116.83071107745523,
+          "profit_factor": 0.6453431353191412,
+          "max_drawdown_r": 131.57302245098873,
+          "long_trades": 176,
+          "short_trades": 157,
+          "exit_counts": {
+            "stop": 200,
+            "time": 85,
+            "target": 48
+          },
+          "months": {
+            "2026-05": {
+              "trades": 12,
+              "win_rate": 0.3333333333333333,
+              "mean_net_return": 3.6916782228757656e-05,
+              "mean_net_r": -0.0866520012099198,
+              "sum_net_r": -1.0398240145190376,
+              "profit_factor": 1.009148005168935,
+              "max_drawdown_r": 5.6270735085972605,
+              "long_trades": 0,
+              "short_trades": 12,
+              "exit_counts": {
+                "stop": 8,
+                "target": 3,
+                "time": 1
+              }
+            },
+            "2026-06": {
+              "trades": 104,
+              "win_rate": 0.3173076923076923,
+              "mean_net_return": -0.0018059044041321612,
+              "mean_net_r": -0.20205758400109688,
+              "sum_net_r": -21.013988736114076,
+              "profit_factor": 0.6946507758857676,
+              "max_drawdown_r": 37.100922841138484,
+              "long_trades": 36,
+              "short_trades": 68,
+              "exit_counts": {
+                "stop": 64,
+                "time": 21,
+                "target": 19
+              }
+            },
+            "2026-07": {
+              "trades": 86,
+              "win_rate": 0.313953488372093,
+              "mean_net_return": -0.0018956269759932362,
+              "mean_net_r": -0.35228745214499047,
+              "sum_net_r": -30.29672088446918,
+              "profit_factor": 0.5015170907428654,
+              "max_drawdown_r": 32.74839229698614,
+              "long_trades": 60,
+              "short_trades": 26,
+              "exit_counts": {
+                "stop": 45,
+                "time": 32,
+                "target": 9
+              }
+            },
+            "2026-08": {
+              "trades": 93,
+              "win_rate": 0.3118279569892473,
+              "mean_net_return": -0.0008941117784725316,
+              "mean_net_r": -0.37532059467314033,
+              "sum_net_r": -34.90481530460205,
+              "profit_factor": 0.7798418119549331,
+              "max_drawdown_r": 43.780011689421066,
+              "long_trades": 65,
+              "short_trades": 28,
+              "exit_counts": {
+                "stop": 56,
+                "time": 23,
+                "target": 14
+              }
+            },
+            "2026-09": {
+              "trades": 38,
+              "win_rate": 0.21052631578947367,
+              "mean_net_return": -0.0029023617118854868,
+              "mean_net_r": -0.7782990036250235,
+              "sum_net_r": -29.57536213775089,
+              "profit_factor": 0.33229829979998,
+              "max_drawdown_r": 29.575362137750883,
+              "long_trades": 15,
+              "short_trades": 23,
+              "exit_counts": {
+                "stop": 27,
+                "time": 8,
+                "target": 3
+              }
+            }
+          }
+        },
+        "naive": {
+          "trades": 355,
+          "win_rate": 0.29859154929577464,
+          "mean_net_return": -0.001825664529251975,
+          "mean_net_r": -0.3704524835448189,
+          "sum_net_r": -131.51063165841072,
+          "profit_factor": 0.6057521269634966,
+          "max_drawdown_r": 143.9157250148226,
+          "long_trades": 183,
+          "short_trades": 172,
+          "exit_counts": {
+            "stop": 214,
+            "time": 91,
+            "target": 50
+          },
+          "months": {
+            "2026-05": {
+              "trades": 13,
+              "win_rate": 0.3076923076923077,
+              "mean_net_return": -0.000439593442387671,
+              "mean_net_r": -0.10481906221291541,
+              "sum_net_r": -1.3626478087679004,
+              "profit_factor": 0.8953036886585459,
+              "max_drawdown_r": 5.949897302846123,
+              "long_trades": 0,
+              "short_trades": 13,
+              "exit_counts": {
+                "stop": 8,
+                "target": 3,
+                "time": 2
+              }
+            },
+            "2026-06": {
+              "trades": 112,
+              "win_rate": 0.30357142857142855,
+              "mean_net_return": -0.002158744139868857,
+              "mean_net_r": -0.24856771138327768,
+              "sum_net_r": -27.839583674927102,
+              "profit_factor": 0.6276065726235611,
+              "max_drawdown_r": 41.91212355707886,
+              "long_trades": 38,
+              "short_trades": 74,
+              "exit_counts": {
+                "stop": 69,
+                "time": 24,
+                "target": 19
+              }
+            },
+            "2026-07": {
+              "trades": 94,
+              "win_rate": 0.32978723404255317,
+              "mean_net_return": -0.0019322944568802623,
+              "mean_net_r": -0.3526384356440213,
+              "sum_net_r": -33.148012950538,
+              "profit_factor": 0.5083102508717808,
+              "max_drawdown_r": 37.263476826428274,
+              "long_trades": 63,
+              "short_trades": 31,
+              "exit_counts": {
+                "stop": 52,
+                "time": 31,
+                "target": 11
+              }
+            },
+            "2026-08": {
+              "trades": 95,
+              "win_rate": 0.30526315789473685,
+              "mean_net_return": -0.0009843317443952036,
+              "mean_net_r": -0.38144337726472155,
+              "sum_net_r": -36.23712084014855,
+              "profit_factor": 0.7587723613589292,
+              "max_drawdown_r": 43.29034536710452,
+              "long_trades": 67,
+              "short_trades": 28,
+              "exit_counts": {
+                "stop": 56,
+                "time": 25,
+                "target": 14
+              }
+            },
+            "2026-09": {
+              "trades": 41,
+              "win_rate": 0.1951219512195122,
+              "mean_net_return": -0.003060235483019767,
+              "mean_net_r": -0.8030064971714428,
+              "sum_net_r": -32.923266384029155,
+              "profit_factor": 0.31443413025373446,
+              "max_drawdown_r": 32.92326638402914,
+              "long_trades": 15,
+              "short_trades": 26,
+              "exit_counts": {
+                "stop": 29,
+                "time": 9,
+                "target": 3
+              }
+            }
+          }
+        },
+        "baseline": {
+          "trades": 587,
+          "win_rate": 0.313458262350937,
+          "mean_net_return": -0.0013371590884215024,
+          "mean_net_r": -0.31525896046649343,
+          "sum_net_r": -185.05700979383164,
+          "profit_factor": 0.6818543149782239,
+          "max_drawdown_r": 202.62314186253712,
+          "long_trades": 289,
+          "short_trades": 298,
+          "exit_counts": {
+            "stop": 337,
+            "time": 168,
+            "target": 82
+          },
+          "months": {
+            "2026-05": {
+              "trades": 27,
+              "win_rate": 0.3333333333333333,
+              "mean_net_return": -0.000596874180772053,
+              "mean_net_r": -0.12600736299342882,
+              "sum_net_r": -3.402198800822578,
+              "profit_factor": 0.8320449917364963,
+              "max_drawdown_r": 10.597596350128317,
+              "long_trades": 0,
+              "short_trades": 27,
+              "exit_counts": {
+                "stop": 15,
+                "time": 7,
+                "target": 5
+              }
+            },
+            "2026-06": {
+              "trades": 159,
+              "win_rate": 0.39622641509433965,
+              "mean_net_return": -0.00033370692841768943,
+              "mean_net_r": -0.04405454488363185,
+              "sum_net_r": -7.004672636497464,
+              "profit_factor": 0.9276836783942853,
+              "max_drawdown_r": 32.254679046462044,
+              "long_trades": 54,
+              "short_trades": 105,
+              "exit_counts": {
+                "stop": 80,
+                "time": 52,
+                "target": 27
+              }
+            },
+            "2026-07": {
+              "trades": 175,
+              "win_rate": 0.26285714285714284,
+              "mean_net_return": -0.002366795027043789,
+              "mean_net_r": -0.4866708512018984,
+              "sum_net_r": -85.16739896033222,
+              "profit_factor": 0.4597821476863184,
+              "max_drawdown_r": 86.79751569788532,
+              "long_trades": 110,
+              "short_trades": 65,
+              "exit_counts": {
+                "stop": 110,
+                "time": 48,
+                "target": 17
+              }
+            },
+            "2026-08": {
+              "trades": 163,
+              "win_rate": 0.3128834355828221,
+              "mean_net_return": -0.0011336787140730311,
+              "mean_net_r": -0.3832679297724207,
+              "sum_net_r": -62.47267255290457,
+              "profit_factor": 0.6917702417455669,
+              "max_drawdown_r": 62.47267255290455,
+              "long_trades": 101,
+              "short_trades": 62,
+              "exit_counts": {
+                "stop": 95,
+                "time": 45,
+                "target": 23
+              }
+            },
+            "2026-09": {
+              "trades": 63,
+              "win_rate": 0.23809523809523808,
+              "mean_net_return": -0.0018533114329777254,
+              "mean_net_r": -0.42873121973452166,
+              "sum_net_r": -27.010066843274863,
+              "profit_factor": 0.5695636085988659,
+              "max_drawdown_r": 29.202708087502852,
+              "long_trades": 24,
+              "short_trades": 39,
+              "exit_counts": {
+                "stop": 37,
+                "time": 16,
+                "target": 10
+              }
+            }
+          }
+        }
+      }
+    },
+    "SOLUSDT": {
+      "data_start": "2025-09-14 00:00:00+00:00",
+      "data_end": "2026-09-13 23:45:00+00:00",
+      "test_start": "2026-05-27 12:00:00+00:00",
+      "data_sha256": "8885e8c6077ab765867c20fd2d1805ea9516e4b0df46acdadca08df6bab6ea2a",
+      "policies": {
+        "grouped": {
+          "trades": 327,
+          "win_rate": 0.3058103975535168,
+          "mean_net_return": -0.0014842700823045026,
+          "mean_net_r": -0.22312676509427062,
+          "sum_net_r": -72.96245218582649,
+          "profit_factor": 0.7644143537268301,
+          "max_drawdown_r": 85.64279141535951,
+          "long_trades": 182,
+          "short_trades": 145,
+          "exit_counts": {
+            "stop": 189,
+            "time": 91,
+            "target": 47
+          },
+          "months": {
+            "2026-05": {
+              "trades": 12,
+              "win_rate": 0.25,
+              "mean_net_return": -0.001232612599332743,
+              "mean_net_r": -0.33636113845746446,
+              "sum_net_r": -4.036333661489573,
+              "profit_factor": 0.7788403017962647,
+              "max_drawdown_r": 6.63043167670835,
+              "long_trades": 2,
+              "short_trades": 10,
+              "exit_counts": {
+                "stop": 8,
+                "time": 2,
+                "target": 2
+              }
+            },
+            "2026-06": {
+              "trades": 94,
+              "win_rate": 0.3404255319148936,
+              "mean_net_return": -0.0011101477331223455,
+              "mean_net_r": -0.03914966446197706,
+              "sum_net_r": -3.680068459425844,
+              "profit_factor": 0.8649235191508322,
+              "max_drawdown_r": 21.08817315067125,
+              "long_trades": 45,
+              "short_trades": 49,
+              "exit_counts": {
+                "stop": 53,
+                "time": 26,
+                "target": 15
+              }
+            },
+            "2026-07": {
+              "trades": 83,
+              "win_rate": 0.30120481927710846,
+              "mean_net_return": -0.002053937823708662,
+              "mean_net_r": -0.32611419494031546,
+              "sum_net_r": -27.067478180046184,
+              "profit_factor": 0.6054250755894288,
+              "max_drawdown_r": 36.51414139200375,
+              "long_trades": 43,
+              "short_trades": 40,
+              "exit_counts": {
+                "stop": 45,
+                "time": 30,
+                "target": 8
+              }
+            },
+            "2026-08": {
+              "trades": 102,
+              "win_rate": 0.30392156862745096,
+              "mean_net_return": -0.0005310318719168876,
+              "mean_net_r": -0.1954834874227181,
+              "sum_net_r": -19.939315717117246,
+              "profit_factor": 0.9042050738980665,
+              "max_drawdown_r": 34.35633915891458,
+              "long_trades": 75,
+              "short_trades": 27,
+              "exit_counts": {
+                "stop": 59,
+                "time": 24,
+                "target": 19
+              }
+            },
+            "2026-09": {
+              "trades": 36,
+              "win_rate": 0.25,
+              "mean_net_return": -0.003932471902909375,
+              "mean_net_r": -0.5066460046596569,
+              "sum_net_r": -18.239256167747648,
+              "profit_factor": 0.3660021617835193,
+              "max_drawdown_r": 20.38399831447576,
+              "long_trades": 17,
+              "short_trades": 19,
+              "exit_counts": {
+                "stop": 24,
+                "time": 9,
+                "target": 3
+              }
+            }
+          }
+        },
+        "naive": {
+          "trades": 352,
+          "win_rate": 0.3039772727272727,
+          "mean_net_return": -0.0014209607926182733,
+          "mean_net_r": -0.23151048919222897,
+          "sum_net_r": -81.4916921956646,
+          "profit_factor": 0.7747044168109762,
+          "max_drawdown_r": 97.90863636534277,
+          "long_trades": 195,
+          "short_trades": 157,
+          "exit_counts": {
+            "stop": 204,
+            "time": 99,
+            "target": 49
+          },
+          "months": {
+            "2026-05": {
+              "trades": 13,
+              "win_rate": 0.23076923076923078,
+              "mean_net_return": -0.0018693813477674037,
+              "mean_net_r": -0.40593831790650514,
+              "sum_net_r": -5.277198132784567,
+              "profit_factor": 0.6818760243263484,
+              "max_drawdown_r": 7.871296148003343,
+              "long_trades": 2,
+              "short_trades": 11,
+              "exit_counts": {
+                "stop": 9,
+                "time": 2,
+                "target": 2
+              }
+            },
+            "2026-06": {
+              "trades": 98,
+              "win_rate": 0.35714285714285715,
+              "mean_net_return": -0.000838348775501402,
+              "mean_net_r": -0.01446032220916165,
+              "sum_net_r": -1.4171115764978417,
+              "profit_factor": 0.9009727238128271,
+              "max_drawdown_r": 23.009884401478764,
+              "long_trades": 48,
+              "short_trades": 50,
+              "exit_counts": {
+                "stop": 57,
+                "time": 25,
+                "target": 16
+              }
+            },
+            "2026-07": {
+              "trades": 91,
+              "win_rate": 0.2857142857142857,
+              "mean_net_return": -0.002095585193850579,
+              "mean_net_r": -0.3688318522579105,
+              "sum_net_r": -33.563698555469855,
+              "profit_factor": 0.5847042385477799,
+              "max_drawdown_r": 43.01036176742741,
+              "long_trades": 46,
+              "short_trades": 45,
+              "exit_counts": {
+                "stop": 49,
+                "time": 34,
+                "target": 8
+              }
+            },
+            "2026-08": {
+              "trades": 104,
+              "win_rate": 0.3076923076923077,
+              "mean_net_return": -0.0005694402080471567,
+              "mean_net_r": -0.21828960217368765,
+              "sum_net_r": -22.702118626063516,
+              "profit_factor": 0.8974406953221677,
+              "max_drawdown_r": 35.87985876783019,
+              "long_trades": 76,
+              "short_trades": 28,
+              "exit_counts": {
+                "stop": 61,
+                "time": 25,
+                "target": 18
+              }
+            },
+            "2026-09": {
+              "trades": 46,
+              "win_rate": 0.2391304347826087,
+              "mean_net_return": -0.003126044069656772,
+              "mean_net_r": -0.4028601153228006,
+              "sum_net_r": -18.531565304848826,
+              "profit_factor": 0.4816747723957175,
+              "max_drawdown_r": 22.83007788564817,
+              "long_trades": 23,
+              "short_trades": 23,
+              "exit_counts": {
+                "stop": 28,
+                "time": 13,
+                "target": 5
+              }
+            }
+          }
+        },
+        "baseline": {
+          "trades": 606,
+          "win_rate": 0.3201320132013201,
+          "mean_net_return": -0.0013123793106773066,
+          "mean_net_r": -0.2274577840839571,
+          "sum_net_r": -137.839417154878,
+          "profit_factor": 0.7799994192911277,
+          "max_drawdown_r": 146.37547912121886,
+          "long_trades": 312,
+          "short_trades": 294,
+          "exit_counts": {
+            "stop": 354,
+            "time": 167,
+            "target": 85
+          },
+          "months": {
+            "2026-05": {
+              "trades": 26,
+              "win_rate": 0.23076923076923078,
+              "mean_net_return": -0.0032323073526109945,
+              "mean_net_r": -0.600731322366843,
+              "sum_net_r": -15.61901438153792,
+              "profit_factor": 0.40227654116515826,
+              "max_drawdown_r": 18.227728844594786,
+              "long_trades": 2,
+              "short_trades": 24,
+              "exit_counts": {
+                "stop": 17,
+                "time": 7,
+                "target": 2
+              }
+            },
+            "2026-06": {
+              "trades": 162,
+              "win_rate": 0.35802469135802467,
+              "mean_net_return": -0.000660937087289424,
+              "mean_net_r": -0.048503421832571475,
+              "sum_net_r": -7.857554336876579,
+              "profit_factor": 0.9151657910327142,
+              "max_drawdown_r": 28.108653012017562,
+              "long_trades": 81,
+              "short_trades": 81,
+              "exit_counts": {
+                "stop": 91,
+                "time": 45,
+                "target": 26
+              }
+            },
+            "2026-07": {
+              "trades": 170,
+              "win_rate": 0.3,
+              "mean_net_return": -0.0016721197960287502,
+              "mean_net_r": -0.31098865640518286,
+              "sum_net_r": -52.86807158888109,
+              "profit_factor": 0.662595676343477,
+              "max_drawdown_r": 64.16025035545513,
+              "long_trades": 77,
+              "short_trades": 93,
+              "exit_counts": {
+                "stop": 96,
+                "time": 55,
+                "target": 19
+              }
+            },
+            "2026-08": {
+              "trades": 182,
+              "win_rate": 0.3131868131868132,
+              "mean_net_return": -0.0010189750441887122,
+              "mean_net_r": -0.2459185740511197,
+              "sum_net_r": -44.757180477303784,
+              "profit_factor": 0.8140197991249951,
+              "max_drawdown_r": 64.74064684261569,
+              "long_trades": 127,
+              "short_trades": 55,
+              "exit_counts": {
+                "stop": 112,
+                "time": 39,
+                "target": 31
+              }
+            },
+            "2026-09": {
+              "trades": 66,
+              "win_rate": 0.3333333333333333,
+              "mean_net_return": -0.002037518781733974,
+              "mean_net_r": -0.2535999450042214,
+              "sum_net_r": -16.737596370278613,
+              "profit_factor": 0.6390957523482674,
+              "max_drawdown_r": 25.32565834897819,
+              "long_trades": 25,
+              "short_trades": 41,
+              "exit_counts": {
+                "stop": 38,
+                "time": 21,
+                "target": 7
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
