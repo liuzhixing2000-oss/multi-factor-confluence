@@ -77,8 +77,10 @@ def scores(base):
         out[policy+'_signal']=direction.where(eligible,0).astype(int)
     return out,f
 
-def backtest(d,policy='grouped',start=None,fee_bps=6,slippage_bps=3,funding_bps_per_8h=1,max_bars=32):
-    s,_=scores(d); records=[]; i=0
+def backtest(d,policy='grouped',start=None,fee_bps=6,slippage_bps=3,funding_bps_per_8h=1,max_bars=32,signal_frame=None):
+    s=scores(d)[0] if signal_frame is None else signal_frame
+    if not s.index.equals(d.index): raise ValueError("Signal index mismatch")
+    records=[]; i=0
     while i<len(d)-1:
         side=int(s.iloc[i][policy+'_signal'])
         if not side or (start is not None and d.index[i]<start): i+=1; continue

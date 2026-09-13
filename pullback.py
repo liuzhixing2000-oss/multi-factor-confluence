@@ -1,0 +1,23 @@
+"""Frozen pullback hypotheses. No parameter search."""
+import numpy as np
+from engine import scores,backtest as base_backtest
+
+def pullback_scores(d):
+    s,f=scores(d)
+    up=(f['4h|trend.ema.24']>0)&(f['4h|trend.slope.24']>0)&(f['1h|trend.ema.24']>0)&(f['1h|trend.slope.24']>0)
+    down=(f['4h|trend.ema.24']<0)&(f['4h|trend.slope.24']<0)&(f['1h|trend.ema.24']<0)&(f['1h|trend.slope.24']<0)
+    # EMA24 on closed 15m candles. First countertrend close starts a pullback.
+    x=f['15m|trend.ema.24']
+    long_touch=up & (x<=0) & (x.shift(1)>0)
+    short_touch=down & (x>=0) & (x.shift(1)<0)
+    long_recent=long_touch.shift(1).rolling(8,min_periods=1).max().eq(1)
+    short_recent=short_touch.shift(1).rolling(8,min_periods=1).max().eq(1)
+    long_resume=up & long_recent & (x>0)&(x.shift(1)<=0)
+    short_resume=down & short_recent & (x<0)&(x.shift(1)>=0)
+    eligible=s.ready & s.atr_pct.between(.001,.04)
+    for name,long,short in [('pullback_touch',long_touch,short_touch),('pullback_resume',long_resume,short_resume)]:
+        s[name+'_signal']=np.where(eligible&long,1,np.where(eligible&short,-1,0))
+    return s
+
+def backtest(d,policy='grouped',**kwargs):
+    return base_backtest(d,policy,signal_frame=pullback_scores(d),**kwargs)
