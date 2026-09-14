@@ -12,9 +12,10 @@ def candles(symbol,bars=35040):
     d.index=pd.to_datetime(d.start+300000,unit="ms",utc=True)
     return d.sort_index()[list("ohlcv")]
 
-def backtest(x,s,mode):
+def backtest(x,s,mode,start=20,end=None):
     trades=[]; side=None; entry=stop=target=risk=0.0; best=0.0
-    for i in range(20,len(x)-1):
+    if end is None: end=len(x)-1
+    for i in range(start,end):
         hi,lo=float(x.h.iloc[i]),float(x.l.iloc[i])
         if side:
             if side=="L":
@@ -51,9 +52,12 @@ def run():
             # Correct the hourly high/low aggregation explicitly.
             h=x.resample("60min",closed="right",label="right").agg({"o":"first","h":"max","l":"min","c":"last","v":"sum"}).dropna()
             s=signals(h,m,x); causal_check(h,m,x)
+            split=int(len(x)*0.70)
             for mode in ["1.5R","2R","trail"]:
-                bt=backtest(x,s,mode)
-                emit({"event":"mtf_result","symbol":symbol,"mode":mode,"bars_5m":len(x),"signals":int((s.long_signal|s.short_signal).sum()),"causal_check":True,**bt})
+                dev=backtest(x,s,mode,20,split)
+                oos=backtest(x,s,mode,split,len(x)-1)
+                emit({"event":"mtf_result","symbol":symbol,"mode":mode,"period":"development_70pct","bars_5m":split,"signals":int((s.long_signal.iloc[:split]|s.short_signal.iloc[:split]).sum()),"causal_check":True,**dev})
+                emit({"event":"mtf_result","symbol":symbol,"mode":mode,"period":"OOS_30pct","bars_5m":len(x)-split,"signals":int((s.long_signal.iloc[split:]|s.short_signal.iloc[split:]).sum()),"causal_check":True,**oos})
         emit({"event":"mtf_complete"})
     except Exception: emit({"event":"mtf_failed","error":traceback.format_exc()})
 if __name__=="__main__": run()
