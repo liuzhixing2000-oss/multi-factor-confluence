@@ -15,7 +15,13 @@ def pullback_scores(d):
     long_resume=up & long_recent & (x>0)&(x.shift(1)<=0)
     short_resume=down & short_recent & (x<0)&(x.shift(1)>=0)
     eligible=s.ready & s.atr_pct.between(.001,.04)
-    for name,long,short in [('pullback_touch',long_touch,short_touch),('pullback_resume',long_resume,short_resume)]:
+    body=(d.c-d.o).abs(); rng=(d.h-d.l).replace(0,np.nan)
+    lower=d[['o','c']].min(axis=1)-d.l; upper=d.h-d[['o','c']].max(axis=1)
+    bull_pin=(lower>=2*body)&(lower>=upper)&((d.c-d.l)/rng>=.60)&(d.c>d.o)
+    bear_pin=(upper>=2*body)&(upper>=lower)&((d.h-d.c)/rng>=.60)&(d.c<d.o)
+    long_pin=up & long_recent & bull_pin
+    short_pin=down & short_recent & bear_pin
+    for name,long,short in [('pullback_touch',long_touch,short_touch),('pullback_resume',long_resume,short_resume),('pullback_pinbar',long_pin,short_pin)]:
         s[name+'_signal']=np.where(eligible&long,1,np.where(eligible&short,-1,0))
     return s
 
