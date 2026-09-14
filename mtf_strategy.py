@@ -1,6 +1,6 @@
 """Relaxed multi-timeframe trend-pullback strategy.
 1h: small trend (EMA20 vs EMA50 and two HH/HL or LL/LH).
-15m: Fibonacci 38.2%-61.8% pullback, close near the zone and any directional reaction.
+15m: Fibonacci 38.2%-61.8% pullback, then a close back beyond 38.2%/61.8% (reclaim).
 5m: entry on pullback continuation/break of prior candle, with structural ATR stop.
 """
 import numpy as np
@@ -29,8 +29,13 @@ def signals(one_h,fifteen_m,five_m):
     near_long=(l<=hiz+0.35*atr)&(c>=loz-0.25*atr)&(c<=hiz+0.5*atr)
     near_short=(h>=loz-0.35*atr)&(c<=hiz+0.25*atr)&(c>=loz-0.5*atr)
     bull=(c>o)|(c>c.shift(1)); bear=(c<o)|(c<c.shift(1))
-    react_long=(near_long&bull).rolling(3).max().fillna(False).astype(bool)
-    react_short=(near_short&bear).rolling(3).max().fillna(False).astype(bool)
+    # Require a genuine 15m reclaim after entering the Fib pullback zone.
+    # Long: price touched 38.2%-61.8% and closes back above 38.2%.
+    # Short: price touched the zone and closes back below 61.8%.
+    reclaim_long=near_long & bull & (c>=z.fib38)
+    reclaim_short=near_short & bear & (c<=z.fib62)
+    react_long=reclaim_long.rolling(3).max().fillna(False).astype(bool)
+    react_short=reclaim_short.rolling(3).max().fillna(False).astype(bool)
     active_l=react_long.reindex(five_m.index,method="ffill").fillna(False).rolling(12).max().fillna(False).astype(bool)
     active_s=react_short.reindex(five_m.index,method="ffill").fillna(False).rolling(12).max().fillna(False).astype(bool)
     d=z[["up","dn"]].reindex(five_m.index,method="ffill").fillna(False)
