@@ -4,4 +4,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY engine.py app.py research.py pullback.py research_pullback.py ./
 ENV PYTHONUNBUFFERED=1
-CMD ["python", "research_pullback.py", "serve"]
+CMD ["python", "research_pullback.py"]
