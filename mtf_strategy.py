@@ -52,5 +52,5 @@ def causal_check(one_h,fifteen_m,five_m):
         part=signals(one_h[one_h.index<=five_m.index[n]],
                      fifteen_m[fifteen_m.index<=five_m.index[n]],
                      five_m.iloc[:n])
-        pd.testing.assert_frame_equal(full.iloc[:n],part,recheck_freq=False)
+        pd.testing.assert_frame_equal(full.iloc[:n],part)
     return True
