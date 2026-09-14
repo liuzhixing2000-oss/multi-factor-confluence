@@ -38,13 +38,16 @@ def signals(one_h,fifteen_m,five_m):
     react_short=reclaim_short.rolling(3).max().fillna(False).astype(bool)
     active_l=react_long.reindex(five_m.index,method="ffill").fillna(False).rolling(12).max().fillna(False).astype(bool)
     active_s=react_short.reindex(five_m.index,method="ffill").fillna(False).rolling(12).max().fillna(False).astype(bool)
-    d=z[["up","dn"]].reindex(five_m.index,method="ffill").fillna(False)
+    d=z[["up","dn","fib38","fib62"]].reindex(five_m.index,method="ffill").fillna(False)
     c5,o5,h5,l5=five_m.c,five_m.o,five_m.h,five_m.l
     pull_l=(c5>o5)&(c5>h5.shift(1)) | ((c5>c5.shift(1))&(l5>l5.shift(1)))
     pull_s=(c5<o5)&(c5<l5.shift(1)) | ((c5<c5.shift(1))&(h5<h5.shift(1)))
     out=pd.DataFrame(index=five_m.index)
-    out["long_signal"]=d.up&active_l&pull_l
-    out["short_signal"]=d.dn&active_s&pull_s
+    # After the 15m reclaim, the 5m pullback must respect the reclaimed level.
+    hold_long=l5 >= d.fib38
+    hold_short=h5 <= d.fib62
+    out["long_signal"]=d.up&active_l&pull_l&hold_long
+    out["short_signal"]=d.dn&active_s&pull_s&hold_short
     out["atr5"]=(h5-l5).rolling(14).mean()
     out["stop_long"]=l5.rolling(3).min()-out.atr5*.25
     out["stop_short"]=h5.rolling(3).max()+out.atr5*.25
