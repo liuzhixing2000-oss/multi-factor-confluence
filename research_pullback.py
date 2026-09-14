@@ -5,7 +5,7 @@ from threading import Thread
 import numpy as np
 import pandas as pd
 from app import get,emit,main
-from pullback import backtest,macd_fib_scores
+from pullback import backtest,macd_fib_scores,bb_div_scores
 
 def download(symbol,end,bars=35040):
     rows=[]; cursor=end
@@ -34,8 +34,8 @@ def run():
             d=download(symbol,end); start=d.index[int(len(d)*.7)]
             item={'data_start':str(d.index[0]),'data_end':str(d.index[-1]),'test_start':str(start),'data_sha256':hashlib.sha256(d.to_csv().encode()).hexdigest(),'policies':{}}
             emit({'event':'research_data_ready','symbol':symbol,'bars':len(d)})
-            for policy in ['grouped','pullback_pinbar','htf_pinbar','macd_fib_filter','macd_fib_reversal']:
-                t=backtest(d,policy,start=start,signal_frame=(macd_fib_scores(d) if policy.startswith("macd_fib") else None))
+            for policy in ['grouped','bb_div_reversal','bb_div_filter']:
+                t=backtest(d,policy,start=start,signal_frame=(bb_div_scores(d) if policy.startswith("bb_div") else None))
                 item['policies'][policy]=metrics(t)
                 item['policies'][policy]['months']={m:metrics(g) for m,g in t.groupby(pd.to_datetime(t.signal_time,utc=True).dt.strftime('%Y-%m'))} if len(t) else {}
                 archive[f'{symbol}_{policy}_trades.csv']=t.to_csv(index=False)

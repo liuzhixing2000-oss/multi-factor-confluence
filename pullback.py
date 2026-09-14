@@ -62,3 +62,18 @@ def macd_fib_scores(d):
     # Countertrend reversal only on divergence plus opposite rejection candle in fib zone.
     s['macd_fib_reversal_signal']=np.where(eligible&bear&zone_short, -1, np.where(eligible&bull&zone_long,1,0))
     return s
+
+def bb_div_scores(d):
+    s,f=scores(d)
+    def macd(x):
+        line=x.ewm(span=12,adjust=False,min_periods=12).mean()-x.ewm(span=26,adjust=False,min_periods=26).mean(); return line-line.ewm(span=9,adjust=False,min_periods=9).mean()
+    c4=d.resample('240min',closed='right',label='right',origin='epoch').c.last(); c1=d.resample('60min',closed='right',label='right',origin='epoch').c.last()
+    h4=macd(c4).reindex(d.index,method='ffill'); h1=macd(c1).reindex(d.index,method='ffill'); px=d.c; look=24
+    bear=(px.pct_change(look)>0.015)&(h4.diff(look)<0)&(h1.diff(look)<0); bull=(px.pct_change(look)<-0.015)&(h4.diff(look)>0)&(h1.diff(look)>0)
+    ma=c4.rolling(20).mean(); sd=c4.rolling(20).std(); upper=(ma+2*sd).reindex(d.index,method='ffill'); lower=(ma-2*sd).reindex(d.index,method='ffill')
+    touch_up=(px>=upper*.995); touch_down=(px<=lower*1.005)
+    eligible=s.ready&s.atr_pct.between(.001,.04)
+    s['bb_div_reversal_signal']=np.where(eligible&bull&touch_down,1,np.where(eligible&bear&touch_up,-1,0))
+    up=(f['4h|trend.ema.24']>0)&(f['1h|trend.ema.24']>0); down=(f['4h|trend.ema.24']<0)&(f['1h|trend.ema.24']<0)
+    s['bb_div_filter_signal']=np.where(eligible&up&~bear&touch_down,1,np.where(eligible&down&~bull&touch_up,-1,0))
+    return s
